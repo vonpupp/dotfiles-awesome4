@@ -13,6 +13,9 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 
 obvious = require("obvious")
 require("obvious.battery")
+require("obvious.keymap_switch")
+
+obvious.keymap_switch.set_layouts({ "us", "us(intl)", "br", "es" })
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -219,6 +222,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             obvious.battery(),
+            obvious.keymap_switch(),
             mytextclock,
             s.mylayoutbox,
         },

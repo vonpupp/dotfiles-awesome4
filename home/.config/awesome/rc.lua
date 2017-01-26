@@ -1,9 +1,9 @@
 -- Standard awesome library
 local gears = require("gears")
-local awful = require("awful")
+awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
-local wibox = require("wibox")
+wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -555,11 +555,10 @@ package.path = package.path .. ";" .. rc_path() .. "rc.d/?.lua"
 bg_change_cmd   = "feh --bg-scale -z ~/Pictures/wallpapers"
 
 ---- my rc's
---require("rc_xkbmap")
---require("rc_redshift")
+--not working require("rc_xkbmap")
+require("rc_redshift")
 --require("rc_videout")
 require("rc_autostart")
-----require("rc_conky")
 --require("rc_textvolume")
 -- }}}
 

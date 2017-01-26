@@ -544,11 +544,23 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- {{{ Dynamic rc.d
 -- Path of the rc.lua
 function rc_path()
    local str = debug.getinfo(2, "S").source:sub(2)
    return str:match("(.*/)")
 end
-
 package.path = package.path .. ";" .. rc_path() .. "rc.d/?.lua"
+
+bg_change_cmd   = "feh --bg-scale -z ~/Pictures/wallpapers"
+
+---- my rc's
+--require("rc_xkbmap")
+--require("rc_redshift")
+--require("rc_videout")
+require("rc_autostart")
+----require("rc_conky")
+--require("rc_textvolume")
+-- }}}
+
 -- vim: set fdm=marker fmr={{{,}}} fdl=0:

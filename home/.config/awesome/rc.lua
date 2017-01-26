@@ -543,3 +543,12 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- Path of the rc.lua
+function rc_path()
+   local str = debug.getinfo(2, "S").source:sub(2)
+   return str:match("(.*/)")
+end
+
+package.path = package.path .. ";" .. rc_path() .. "rc.d/?.lua"
+-- vim: set fdm=marker fmr={{{,}}} fdl=0:

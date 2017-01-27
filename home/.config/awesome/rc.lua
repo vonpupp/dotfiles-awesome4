@@ -19,6 +19,8 @@ require("obvious.volume_alsa")
 
 obvious.keymap_switch.set_layouts({ "us", "us(intl)", "br", "es" })
 
+sep  = "  |  "
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -224,8 +226,11 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             obvious.battery(),
+            wibox.widget.textbox(sep),
             obvious.keymap_switch(),
+            wibox.widget.textbox(sep),
             obvious.temp_info(),
+            wibox.widget.textbox(sep),
             --obvious.volume_alsa():set_term("xterm"),
             mytextclock,
             s.mylayoutbox,

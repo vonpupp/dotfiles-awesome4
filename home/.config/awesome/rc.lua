@@ -51,8 +51,8 @@ end
 beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal        = os.getenv("TERMINAL") or "urxvt"
-editor          = os.getenv("EDITOR") or "vim"
+terminal = "xterm"
+editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -569,11 +569,10 @@ function rc_path()
 end
 package.path = package.path .. ";" .. rc_path() .. "rc.d/?.lua"
 
-bg_change_cmd   = "feh --bg-scale -z ~/Pictures/wallpapers"
-
 ---- my rc's
 --not working require("rc_xkbmap")
 require("rc_redshift")
+require("rc_keybindings")
 --require("rc_videout")
 require("rc_autostart")
 --require("rc_textvolume")

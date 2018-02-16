@@ -19,8 +19,8 @@ editor_cmd      = terminal .. " -e " .. editor
 xeditor_bin     = os.getenv("XEDITOR_BIN") or "gvim"
 xeditor_cmd     = xeditor_bin
 
-browser_bin         = os.getenv("BROWSER_BIN") or "firefox" -- or "dwb"
-file_manager_bin    = os.getenv("FILEMANAGER_BIN") or "spacefm"
+browser_bin         = os.getenv("BROWSER_BIN") or "luakit"
+file_manager_bin    = os.getenv("FILEMANAGER_BIN") or "nemo"
 
 pw_mgr_bin      = os.getenv("PW_MGR_BIN") or "keepassx"
 

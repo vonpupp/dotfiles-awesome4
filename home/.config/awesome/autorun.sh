@@ -23,3 +23,6 @@ run synapse
 
 # Dropbox
 run dropbox
+
+# Anyremote
+run start-anyremote-mpv.sh

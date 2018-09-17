@@ -17,7 +17,7 @@ require("obvious.keymap_switch")
 require("obvious.temp_info")
 require("obvious.volume_alsa")
 
-obvious.keymap_switch.set_layouts({ "us", "us(intl)", "us(dvorak)", "br", "es" })
+obvious.keymap_switch.set_layouts({ "us", "us(intl)", "us(dvorak)", "br", "es", "il" })
 
 sep  = "  |  "
 

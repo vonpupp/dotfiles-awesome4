@@ -97,7 +97,7 @@ globalkeys = awful.util.table.join(globalkeys,
     awful.key({ modkey, "Shift"   }, "n",  function () awful.spawn(wifi_mgr_cmd) end,
               {description="Wifi (nmtui)", group="MY: system"}),
 
-    awful.key({ modkey, "Shift"   }, "s",  redshift.toggle,
+    awful.key({ modkey, "Shift"   }, "s",  function () awful.spawn(scripts_dir .. "redshift-toggle.sh") end,
               {description="Redshift toggle", group="MY: system"}),
 
     awful.key({ }, "Print",  function () awful.spawn(scripts_dir .. "print-screen.sh") end,

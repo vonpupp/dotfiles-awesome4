@@ -7,6 +7,9 @@ function run {
   fi
 }
 
+# Redshift
+run redshift
+
 # Avoid desktop lock on youtube
 run caffeine
 

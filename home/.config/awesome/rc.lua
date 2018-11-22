@@ -575,7 +575,6 @@ package.path = package.path .. ";" .. rc_path() .. "rc.d/?.lua"
 
 ---- my rc's
 --not working require("rc_xkbmap")
-require("rc_redshift")
 require("rc_keybindings")
 --require("rc_videout")
 require("rc_autostart")

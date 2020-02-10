@@ -29,3 +29,6 @@ run dropbox
 
 # Anyremote
 run start-anyremote-mpv.sh
+
+# Syncthing-gtk
+run syncthing-gtk

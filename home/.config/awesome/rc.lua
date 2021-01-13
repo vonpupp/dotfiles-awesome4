@@ -11,13 +11,13 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
-obvious = require("obvious")
-require("obvious.battery")
-require("obvious.keymap_switch")
-require("obvious.temp_info")
-require("obvious.volume_alsa")
+--obvious = require("obvious")
+-- require("obvious.battery")
+-- require("obvious.keymap_switch")
+-- require("obvious.temp_info")
+-- require("obvious.volume_alsa")
 
-obvious.keymap_switch.set_layouts({ "eu", "us(dvorak)", "il", })
+-- obvious.keymap_switch.set_layouts({ "eu", "us(dvorak)", "il", })
 
 sep  = "  |  "
 
@@ -185,12 +185,14 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3Y", "4F", "5L", "6W", "7S", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "1I", "2F", "3Y", "4L", "5L", "6L", "7S", "8", "9" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -225,11 +227,15 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
-            obvious.battery(),
+            batteryarc_widget({
+                show_current_level = true,
+                arc_thickness = 1,
+            }),
+            -- obvious.battery(),
             wibox.widget.textbox(sep),
-            obvious.keymap_switch(),
+            -- obvious.keymap_switch(),
             wibox.widget.textbox(sep),
-            obvious.temp_info(),
+            -- obvious.temp_info(),
             wibox.widget.textbox(sep),
             --obvious.volume_alsa():set_term("xterm"),
             mytextclock,

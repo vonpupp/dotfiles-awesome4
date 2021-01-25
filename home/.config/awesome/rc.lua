@@ -186,6 +186,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
@@ -238,6 +239,16 @@ awful.screen.connect_for_each_screen(function(s)
             -- obvious.temp_info(),
             wibox.widget.textbox(sep),
             --obvious.volume_alsa():set_term("xterm"),
+            volumearc_widget({
+                main_color = '#af13f7',
+                mute_color = '#ff0000',
+                thickness = 5,
+                height = 25,
+                button_press = function(_, _, _, button)   -- Overwrites the button press behaviour to open pavucontrol when clicked
+                    if (button == 1) then awful.spawn('pavucontrol --tab=3', false)
+                    end
+                end
+            }),
             mytextclock,
             s.mylayoutbox,
         },

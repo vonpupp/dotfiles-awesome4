@@ -32,3 +32,9 @@ run start-anyremote-mpv.sh
 
 # Syncthing-gtk
 run syncthing-gtk
+
+# Slack
+run slack
+
+# Flameshot
+run flameshot

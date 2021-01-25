@@ -1,1 +1,2 @@
-scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
+#scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
+flameshot gui
